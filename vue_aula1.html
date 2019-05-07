@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso Vue.js</title>
+
+</head>
+<body>
+
+    <div id="root">
+        <div v-if="x == 2"> é nós </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#root",
+            data: {
+                titulo: "1 2 3", 
+                titulo2: "4 5 6",
+                x = 2
+            }
+        });
+    </script>
+</body>
+</html>
