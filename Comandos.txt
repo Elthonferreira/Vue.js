@@ -1,0 +1,22 @@
+{{ variavel }} ---------------------------------- [Impressão da variável]
+<input v-model="x"> ----------------------------- [Input associado a 'x']
+<div v-if="condição"> 'código' </div> ----------- [If em vue]
+<div v-else-if="condição"> 'código' </div> ------ [Else-if em vue]
+<div v-else> 'código' </div> -------------------- [Else em vue]
+<div v-show="condição"> código </div> ----------- [Similar ao v-if]
+<input :class="{'nome': 'condição'}"> ----------- [Pega arquivo CSS de acordo com a condição]
+<input :class="[if ? then : else]"> ------------- [If then else no input]
+<button onclick="..." :disabled="condição"> ----- [Desativa botão de acordo com a condição]
+v-text="" --------------------------------------- [Printa variavel na tela]
+v-html="" --------------------------------------- [Variável pode usar funções html]
+v-for="x in array" ------------------------------ [Loop em vue]
+cats: ['kitkat','henry','galego'] --------------- [Array de gatos]
+cats: [{name: 'kitkat'}, {name: 'galego}] ------- [Objeto com nome]
+v-on:click="metodo" ----------------------------- [Chama método quando clicar]
+v-on:keyup="metodo" ----------------------------- [Chama médoto quando teclar]
+v-on:keyup.enter="metodo" ----------------------- [Chama método quando press enter]
+'v-on:' pode ser substituido por '@' ------------ [@@@@@@@@@@@@@@@@@]
+
+
+
+
