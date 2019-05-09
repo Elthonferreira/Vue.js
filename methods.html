@@ -9,7 +9,7 @@
 </style>
 
 <div id="root">
-
+    {{kittyfyName}}
     <input v-model="newCat" v-on:keyup.enter="addCat">
     <button v-on:click="addCat">
         Adicionar [+]
@@ -17,17 +17,27 @@
 
     <ul>
         <li v-for="cat in cats">
-            {{ cat.name | capitalize | kittyfy}}
+            {{ cat.name }}
         </li>
     </ul>
+    <cat-list :cats="cats" />
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 
 <script>
+    Vue.component('cat-list', {
+        props: ['cats'],
+        template:
+            '<ul><li v-for="cat in cats"> {{cat.name}} </li></ul>'
+    })
+
     app = new Vue({
         el: '#root',
+        component: [
+            'cat-list'
+        ],
         data: {
             email: '',
             cats: [
@@ -45,12 +55,11 @@
             }
 
         },
-        filters: {
-            capitalize: function (value) {
-                return value.toUpperCase()
-            },
-            kittyfy: function (value) {
-                return value + 'FY'
+        computed: {
+            kittyfyName: function () {
+                if (this.newCat.length > 1) {
+                    return this.newCat + 'y';
+                }
             }
         }
     })
